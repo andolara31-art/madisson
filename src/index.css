@@ -6,14 +6,14 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-script: "Pinyon Script", cursive;
 
-  --color-brand-bg: #FCF6F8;
-  --color-brand-soft: #F3E3E8;
-  --color-brand-muted: #E8C8D2;
-  --color-brand-dusty: #DDA9B8;
-  --color-brand-rose: #B76E8A;
-  --color-brand-deep: #7A4B5D;
+  --color-brand-bg: #FFF7FA;
+  --color-brand-soft: #F8E4EC;
+  --color-brand-muted: #F1C9D8;
+  --color-brand-dusty: #E6AFC3;
+  --color-brand-rose: #C97FA0;
+  --color-brand-deep: #A85E82;
+  --color-brand-dark: #7A445E;
   --color-brand-cream: #FFFDFC;
-  --color-brand-sand: #D8C3A5;
 }
 
 body {
@@ -30,4 +30,22 @@ body {
 
 .font-serif-body {
   font-family: 'Cormorant Garamond', serif;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-sparkle {
+  animation: sparkle 3s ease-in-out infinite;
 }
