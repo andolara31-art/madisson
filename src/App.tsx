@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'motion/react';
-import { Music, Calendar, MapPin, Gift, GlassWater, Utensils, PartyPopper, Camera, Heart, Sparkles, ChevronRight, Map, Star } from 'lucide-react';
+import { Music, Calendar, MapPin, Gift, GlassWater, Utensils, PartyPopper, Camera, Heart, Sparkles, ChevronRight, Map, Star, Car } from 'lucide-react';
 import { CalendarButton } from './components/CalendarButton';
 
 const FadeInUp = ({ children, delay = 0, className = "" }: { children: React.ReactNode, delay?: number, className?: string }) => (
@@ -197,7 +197,7 @@ export default function App() {
           <FadeInUp delay={0.2} className="absolute top-0 left-4 w-64 h-80 z-20">
             <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-rose/20 border-4 border-white rotate-[-3deg]">
               <img 
-                src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&q=80&w=600"
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/44471d7d-1c76-40ff-9f07-d50fe8f70f8d.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi80NDQ3MWQ3ZC0xYzc2LTQwZmYtOWYwNy1kNTBmZThmNzBmOGQuanBlZyIsImlhdCI6MTc3NTk2NDM3MywiZXhwIjoxODA3NTAwMzczfQ.pauaYnfO5sNzLruDuVoERssdsExk5qx9Ag0Ml8s-afw"
                 alt="Maternidad"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -209,7 +209,7 @@ export default function App() {
           <FadeInUp delay={0.4} className="absolute top-40 right-4 w-48 h-64 z-10">
             <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl shadow-brand-rose/10 border-4 border-white rotate-[5deg]">
               <img 
-                src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=600"
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/b981e4db-93bc-4688-944f-621b91310824.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi9iOTgxZTRkYi05M2JjLTQ2ODgtOTQ0Zi02MjFiOTEzMTA4MjQuanBlZyIsImlhdCI6MTc3NTk2NDM0MiwiZXhwIjoxODA3NTAwMzQyfQ.XhHLobhhikXsdnNoUEy3i73fEn9UVjFDb2Lu948R12c"
                 alt="Detalles bebé"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -221,7 +221,7 @@ export default function App() {
           <FadeInUp delay={0.6} className="absolute bottom-20 left-8 w-56 h-72 z-30">
             <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-rose/20 border-4 border-white rotate-[-2deg]">
               <img 
-                src="https://images.unsplash.com/photo-1584824486509-112e4181ff6b?auto=format&fit=crop&q=80&w=600"
+                src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/3d8d194f-054e-47ea-8cda-efbfca094796.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi8zZDhkMTk0Zi0wNTRlLTQ3ZWEtOGNkYS1lZmJmY2EwOTQ3OTYuanBlZyIsImlhdCI6MTc3NTk2NDkxMywiZXhwIjoxODA3NTAwOTEzfQ.ea79sRjmb_MslL4bRy2uAY07AFrRRjfm2VP4oUhXPuc"
                 alt="Zapatitos"
                 className="w-full h-full object-cover"
                 referrerPolicy="no-referrer"
@@ -289,6 +289,10 @@ export default function App() {
                 <p className="text-xs opacity-80 font-light leading-relaxed tracking-wide">
                   C. Varela, Provincia de Alajuela, San Ramón, 20207
                 </p>
+                <div className="mt-4 flex items-center gap-2 opacity-60">
+                  <Car size={14} strokeWidth={1.5} />
+                  <span className="text-[10px] uppercase tracking-widest font-medium">Parqueo disponible para 30 vehículos</span>
+                </div>
               </div>
             </div>
           </div>
@@ -310,7 +314,11 @@ export default function App() {
       <section className="py-32 px-10 bg-brand-soft/10 relative">
         <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,_var(--color-brand-muted)_0%,_transparent_50%)] opacity-20"></div>
         <FadeInUp className="text-center mb-24 relative z-10">
-          <Sparkles className="mx-auto text-brand-rose mb-6 animate-sparkle" size={28} strokeWidth={1} />
+          <div className="flex items-center justify-center gap-4 mb-6">
+            <div className="w-12 h-px bg-gradient-to-r from-transparent to-brand-rose/50"></div>
+            <Heart className="text-brand-rose/60" size={18} strokeWidth={1.5} />
+            <div className="w-12 h-px bg-gradient-to-l from-transparent to-brand-rose/50"></div>
+          </div>
           <h3 className="font-serif-display text-4xl text-brand-dark">Nuestro Itinerario</h3>
           <p className="text-[10px] uppercase tracking-[0.4em] text-brand-rose/60 mt-4 font-bold">Momentos mágicos</p>
         </FadeInUp>
