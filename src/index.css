@@ -1,11 +1,33 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Manrope:wght@200..800&family=Pinyon+Script&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
-  --font-script: "Great Vibes", cursive;
+  --font-serif: "Bodoni Moda", "Cormorant Garamond", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Pinyon Script", cursive;
+
+  --color-brand-bg: #FCF6F8;
+  --color-brand-soft: #F3E3E8;
+  --color-brand-muted: #E8C8D2;
+  --color-brand-dusty: #DDA9B8;
+  --color-brand-rose: #B76E8A;
+  --color-brand-deep: #7A4B5D;
+  --color-brand-cream: #FFFDFC;
+  --color-brand-sand: #D8C3A5;
 }
 
 body {
-  background-color: #f3f4f6; /* Light gray background outside the mobile container */
+  background-color: #f3f4f6;
+}
+
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+}
+
+.font-serif-display {
+  font-family: 'Bodoni Moda', serif;
+}
+
+.font-serif-body {
+  font-family: 'Cormorant Garamond', serif;
 }
