@@ -349,15 +349,20 @@ export default function App() {
             <p className="text-[10px] uppercase tracking-[0.3em] text-brand-rose font-bold">Confirma antes del 1 de Junio</p>
           </div>
           
-          <a 
-            href="https://wa.me/1234567890?text=Hola,%20confirmo%20mi%20asistencia%20al%20baby%20shower%20de%20Madisson!"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-5 bg-brand-rose text-white px-14 py-7 rounded-full shadow-2xl shadow-brand-rose/40 font-black text-[10px] uppercase tracking-[0.4em] transition-all hover:scale-105 active:scale-95 group"
-          >
-            Confirmar Asistencia
-            <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-          </a>
+          <div className="flex flex-col items-center gap-6">
+            <a 
+              href="https://wa.me/50671757171?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Madisson%20%F0%9F%92%96%0Ami%20nombre%20es%3A%0AAsistiremos%3A%0AMensaje%20adicional%3A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-5 bg-brand-rose text-white px-14 py-7 rounded-full shadow-2xl shadow-brand-rose/40 font-black text-[10px] uppercase tracking-[0.4em] transition-all hover:scale-105 active:scale-95 group"
+            >
+              Confirmar Asistencia
+              <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+            <p className="text-[9px] uppercase tracking-[0.2em] text-brand-rose/60 font-bold italic">
+              Puedes confirmarnos tu nombre y cuántas personas asistirán
+            </p>
+          </div>
         </FadeInUp>
       </section>
 

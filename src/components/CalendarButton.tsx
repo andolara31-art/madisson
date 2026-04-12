@@ -1,4 +1,5 @@
 import React from 'react';
+import { Calendar } from 'lucide-react';
 
 interface EventData {
   title: string;
@@ -74,17 +75,18 @@ export const CalendarButton: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4">
+    <div className="flex flex-col items-center gap-5">
       <button 
         onClick={handleCalendarAction}
-        className="px-12 py-5 bg-white border border-brand-muted text-brand-rose rounded-full text-[10px] uppercase tracking-[0.3em] font-black shadow-sm hover:bg-brand-soft transition-all active:scale-95 cursor-pointer"
+        className="group flex items-center gap-3 px-12 py-5 bg-white border border-brand-muted text-brand-rose rounded-full text-[10px] uppercase tracking-[0.3em] font-black shadow-md shadow-brand-rose/5 hover:shadow-lg hover:shadow-brand-rose/10 hover:bg-brand-soft transition-all active:scale-95 cursor-pointer"
       >
+        <Calendar size={14} className="group-hover:scale-110 transition-transform" />
         Guardar en mi calendario
       </button>
       
       <button 
         onClick={generateICS}
-        className="text-[9px] uppercase tracking-[0.2em] text-brand-rose/60 hover:text-brand-rose transition-colors underline underline-offset-4 font-bold"
+        className="text-[9px] uppercase tracking-[0.2em] text-brand-rose/50 hover:text-brand-rose transition-colors underline underline-offset-4 font-bold max-w-[200px] leading-relaxed"
       >
         Si no se abrió tu calendario, toca aquí para descargar la invitación
       </button>
