@@ -144,7 +144,7 @@ export default function App() {
             transition={{ duration: 1.5, ease: "easeOut" }}
             className="inline-block"
           >
-            <span className="text-[10px] uppercase tracking-[0.5em] text-brand-rose font-bold block mb-4">Bienvenida al mundo de</span>
+            <span className="text-[10px] uppercase tracking-[0.5em] text-brand-rose font-bold block mb-4">Bienvenidos al mundo de</span>
             <h1 className="font-script text-8xl sm:text-9xl text-brand-deep leading-none py-6 drop-shadow-sm">Madison</h1>
           </motion.div>
           
