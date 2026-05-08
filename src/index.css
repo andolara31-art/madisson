@@ -6,18 +6,25 @@
   --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
   --font-script: "Pinyon Script", cursive;
 
-  --color-brand-bg: #FFF7FA;
-  --color-brand-soft: #F8E4EC;
-  --color-brand-muted: #F1C9D8;
-  --color-brand-dusty: #E6AFC3;
-  --color-brand-rose: #C97FA0;
-  --color-brand-deep: #A85E82;
-  --color-brand-dark: #7A445E;
-  --color-brand-cream: #FFFDFC;
+  --color-brand-bg: #fff8ed;
+  --color-brand-soft: #ffdce8;
+  --color-brand-muted: #ffc857;
+  --color-brand-dusty: #cfa6ff;
+  --color-brand-rose: #ff6f91;
+  --color-brand-deep: #7856ff;
+  --color-brand-dark: #4f325f;
+  --color-brand-cream: #fffdf6;
+  --color-brand-sky: #7bdff2;
+  --color-brand-mint: #c8f7dc;
+  --color-brand-coral: #ff8c61;
+  --color-brand-lilac: #e6d7ff;
 }
 
 body {
-  background-color: #f3f4f6;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(255, 200, 87, 0.22), transparent 32rem),
+    radial-gradient(circle at 80% 0%, rgba(123, 223, 242, 0.22), transparent 28rem),
+    #f3f4f6;
 }
 
 .font-script {
@@ -48,4 +55,13 @@ body {
 
 .animate-sparkle {
   animation: sparkle 3s ease-in-out infinite;
+}
+
+@keyframes ribbon-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-8deg); }
+  50% { transform: translate3d(8px, -12px, 0) rotate(7deg); }
+}
+
+.animate-ribbon-drift {
+  animation: ribbon-drift 7s ease-in-out infinite;
 }

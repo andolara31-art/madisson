@@ -10,8 +10,8 @@ interface EventData {
 }
 
 const EVENT_INFO: EventData = {
-  title: "Baby Shower de Madisson",
-  description: "Acompáñanos a celebrar la llegada de Madisson. Será un momento muy especial lleno de amor, familia y alegría.",
+  title: "Baby Shower de Madison",
+  description: "Acompáñanos a celebrar la llegada de Madison. Será un momento muy especial lleno de amor, familia y alegría.",
   location: "Rancho Fernández, C. Varela, Provincia de Alajuela, San Ramón, 20207",
   startTime: "2026-06-13T12:00:00-06:00", // Costa Rica is UTC-6
   endTime: "2026-06-13T16:00:00-06:00",
@@ -30,7 +30,7 @@ export const CalendarButton: React.FC = () => {
     const icsContent = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//Baby Shower//Madisson//ES",
+      "PRODID:-//Baby Shower//Madison//ES",
       "BEGIN:VEVENT",
       `DTSTART:${start}`,
       `DTEND:${end}`,
@@ -44,7 +44,7 @@ export const CalendarButton: React.FC = () => {
     const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
     const link = document.createElement('a');
     link.href = window.URL.createObjectURL(blob);
-    link.setAttribute('download', 'BabyShowerMadisson.ics');
+    link.setAttribute('download', 'BabyShowerMadison.ics');
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -78,7 +78,7 @@ export const CalendarButton: React.FC = () => {
     <div className="flex flex-col items-center gap-5">
       <button 
         onClick={handleCalendarAction}
-        className="group flex items-center gap-3 px-12 py-5 bg-white border border-brand-muted text-brand-rose rounded-full text-[10px] uppercase tracking-[0.3em] font-black shadow-md shadow-brand-rose/5 hover:shadow-lg hover:shadow-brand-rose/10 hover:bg-brand-soft transition-all active:scale-95 cursor-pointer"
+        className="group flex items-center gap-3 px-12 py-5 bg-white border border-brand-muted text-brand-deep rounded-full text-[10px] uppercase tracking-[0.3em] font-black shadow-md shadow-brand-deep/5 hover:shadow-lg hover:shadow-brand-deep/10 hover:bg-brand-mint/60 transition-all active:scale-95 cursor-pointer"
       >
         <Calendar size={14} className="group-hover:scale-110 transition-transform" />
         Guardar en mi calendario
@@ -86,7 +86,7 @@ export const CalendarButton: React.FC = () => {
       
       <button 
         onClick={generateICS}
-        className="text-[9px] uppercase tracking-[0.2em] text-brand-rose/50 hover:text-brand-rose transition-colors underline underline-offset-4 font-bold max-w-[200px] leading-relaxed"
+        className="text-[9px] uppercase tracking-[0.2em] text-brand-deep/50 hover:text-brand-deep transition-colors underline underline-offset-4 font-bold max-w-[200px] leading-relaxed"
       >
         Si no se abrió tu calendario, toca aquí para descargar la invitación
       </button>

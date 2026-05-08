@@ -29,7 +29,7 @@ const Sparkle = ({ className, delay = 0 }: { className?: string, delay?: number 
       delay,
       ease: "easeInOut" 
     }}
-    className={`absolute text-brand-muted/40 ${className}`}
+    className={`absolute text-brand-muted/70 ${className}`}
   >
     <Star size={12} fill="currentColor" />
   </motion.div>
@@ -104,7 +104,7 @@ export default function App() {
   };
 
   return (
-    <div className="max-w-md mx-auto min-h-screen bg-brand-bg relative selection:bg-brand-muted selection:text-brand-dark overflow-x-hidden">
+    <div className="max-w-md mx-auto min-h-screen bg-[linear-gradient(180deg,_var(--color-brand-bg)_0%,_#fff_34%,_var(--color-brand-lilac)_100%)] relative selection:bg-brand-muted selection:text-brand-dark overflow-x-hidden">
       
       {/* Hidden Audio Element */}
       <audio ref={audioRef} loop src={musicUrl} />
@@ -118,13 +118,19 @@ export default function App() {
           <img 
             src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=800"
             alt="Fine art baby shower"
-            className="w-full h-full object-cover opacity-30 scale-110"
+            className="w-full h-full object-cover opacity-45 scale-110 saturate-125"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/0 via-brand-bg/40 to-brand-bg"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-brand-bg/10 via-brand-bg/55 to-brand-bg"></div>
         </motion.div>
 
         <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute -top-16 -left-16 w-56 h-56 rounded-full bg-brand-sky/45 blur-3xl"></div>
+          <div className="absolute top-20 -right-16 w-56 h-56 rounded-full bg-brand-muted/35 blur-3xl"></div>
+          <div className="absolute bottom-20 left-8 w-48 h-48 rounded-full bg-brand-coral/30 blur-3xl"></div>
+          <div className="absolute top-24 right-12 w-14 h-4 rounded-full bg-brand-muted/80 animate-ribbon-drift"></div>
+          <div className="absolute bottom-36 left-10 w-12 h-4 rounded-full bg-brand-sky/80 animate-ribbon-drift [animation-delay:1.4s]"></div>
+          <div className="absolute bottom-28 right-10 w-10 h-4 rounded-full bg-brand-coral/80 animate-ribbon-drift [animation-delay:2.1s]"></div>
           <Sparkle className="top-1/4 left-1/4" delay={0} />
           <Sparkle className="top-1/3 right-1/4" delay={1} />
           <Sparkle className="bottom-1/4 left-1/3" delay={2} />
@@ -139,20 +145,20 @@ export default function App() {
             className="inline-block"
           >
             <span className="text-[10px] uppercase tracking-[0.5em] text-brand-rose font-bold block mb-4">Bienvenida al mundo de</span>
-            <h1 className="font-script text-8xl sm:text-9xl text-brand-deep leading-none py-6 drop-shadow-sm">Madisson</h1>
+            <h1 className="font-script text-8xl sm:text-9xl text-brand-deep leading-none py-6 drop-shadow-sm">Madison</h1>
           </motion.div>
           
           <div className="flex items-center justify-center gap-4">
-            <div className="h-px w-8 bg-brand-muted"></div>
-            <h2 className="font-serif-display italic text-2xl text-brand-dark/70 tracking-wide">Baby Shower</h2>
-            <div className="h-px w-8 bg-brand-muted"></div>
+            <div className="h-px w-8 bg-brand-coral"></div>
+            <h2 className="font-serif-display italic text-2xl text-brand-dark/80 tracking-wide">Baby Shower</h2>
+            <div className="h-px w-8 bg-brand-sky"></div>
           </div>
         </FadeInUp>
 
         <FadeInUp delay={0.8} className="absolute bottom-16 left-0 right-0 z-10 flex justify-center">
           <button 
             onClick={toggleMusic}
-            className="group flex items-center gap-4 bg-white/60 backdrop-blur-lg border border-white/80 px-10 py-5 rounded-full shadow-xl shadow-brand-rose/10 text-brand-rose font-bold transition-all hover:bg-white/80 active:scale-95"
+            className="group flex items-center gap-4 bg-white/75 backdrop-blur-lg border border-brand-muted/50 px-10 py-5 rounded-full shadow-xl shadow-brand-coral/15 text-brand-deep font-bold transition-all hover:bg-white/90 active:scale-95"
           >
             <div className="relative">
               <Music size={20} className={isPlaying ? "animate-pulse text-brand-deep" : ""} />
@@ -169,8 +175,10 @@ export default function App() {
       </section>
 
       {/* 2. Welcome Message */}
-      <section className="py-40 px-12 relative bg-white/20">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-brand-muted to-transparent"></div>
+      <section className="py-40 px-12 relative bg-gradient-to-b from-white/60 via-brand-mint/25 to-brand-soft/30">
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-32 bg-gradient-to-b from-brand-coral to-transparent"></div>
+        <div className="absolute top-20 left-10 w-10 h-10 rounded-full bg-brand-sky/60 blur-sm"></div>
+        <div className="absolute bottom-24 right-10 w-12 h-12 rounded-full bg-brand-muted/60 blur-sm"></div>
         <FadeInUp className="text-center space-y-10">
           <div className="relative inline-block">
             <Heart className="text-brand-muted animate-float" size={32} strokeWidth={1} />
@@ -181,21 +189,21 @@ export default function App() {
           <p className="font-serif-body text-3xl leading-relaxed text-brand-dark/90 italic font-light px-2">
             "Antes de conocerte, ya te amábamos. Antes de que nacieras, ya eras nuestro sueño más dulce."
           </p>
-          <p className="text-brand-rose/70 font-sans text-sm tracking-widest uppercase font-medium">Con amor, tus papás</p>
+          <p className="text-brand-deep/70 font-sans text-sm tracking-widest uppercase font-medium">Con amor, tus papás</p>
         </FadeInUp>
       </section>
 
       {/* 3. Editorial Collage: Esperándote con amor */}
-      <section className="py-32 px-6 bg-brand-soft/20 relative overflow-hidden">
+      <section className="py-32 px-6 bg-[linear-gradient(180deg,_rgba(123,223,242,0.18),_rgba(255,220,232,0.22)_55%,_rgba(255,200,87,0.15))] relative overflow-hidden">
         <FadeInUp className="text-center mb-20">
-          <h3 className="font-serif-display text-4xl text-brand-dark mb-4">Esperándote con amor</h3>
-          <div className="h-px w-16 bg-brand-muted mx-auto"></div>
+          <h3 className="font-serif-display text-4xl text-brand-dark mb-4">Un día para celebrar a Madison</h3>
+          <div className="h-px w-16 bg-gradient-to-r from-brand-coral via-brand-muted to-brand-sky mx-auto"></div>
         </FadeInUp>
 
         <div className="relative h-[700px] w-full max-w-sm mx-auto">
           {/* Main Maternity Image */}
           <FadeInUp delay={0.2} className="absolute top-0 left-4 w-64 h-80 z-20">
-            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-rose/20 border-4 border-white rotate-[-3deg]">
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-deep/20 border-4 border-white rotate-[-3deg]">
               <img 
                 src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/44471d7d-1c76-40ff-9f07-d50fe8f70f8d.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi80NDQ3MWQ3ZC0xYzc2LTQwZmYtOWYwNy1kNTBmZThmNzBmOGQuanBlZyIsImlhdCI6MTc3NTk2NDM3MywiZXhwIjoxODA3NTAwMzczfQ.pauaYnfO5sNzLruDuVoERssdsExk5qx9Ag0Ml8s-afw"
                 alt="Maternidad"
@@ -207,7 +215,7 @@ export default function App() {
 
           {/* Baby Details 1 */}
           <FadeInUp delay={0.4} className="absolute top-40 right-4 w-48 h-64 z-10">
-            <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl shadow-brand-rose/10 border-4 border-white rotate-[5deg]">
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-xl shadow-brand-coral/20 border-4 border-white rotate-[5deg]">
               <img 
                 src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/b981e4db-93bc-4688-944f-621b91310824.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi9iOTgxZTRkYi05M2JjLTQ2ODgtOTQ0Zi02MjFiOTEzMTA4MjQuanBlZyIsImlhdCI6MTc3NTk2NDM0MiwiZXhwIjoxODA3NTAwMzQyfQ.XhHLobhhikXsdnNoUEy3i73fEn9UVjFDb2Lu948R12c"
                 alt="Detalles bebé"
@@ -219,7 +227,7 @@ export default function App() {
 
           {/* Baby Details 2 */}
           <FadeInUp delay={0.6} className="absolute bottom-20 left-8 w-56 h-72 z-30">
-            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-rose/20 border-4 border-white rotate-[-2deg]">
+            <div className="w-full h-full rounded-2xl overflow-hidden shadow-2xl shadow-brand-sky/25 border-4 border-white rotate-[-2deg]">
               <img 
                 src="https://fwjdikkenbolqnyadgyq.supabase.co/storage/v1/object/sign/nv/3d8d194f-054e-47ea-8cda-efbfca094796.jpeg?token=eyJraWQiOiJzdG9yYWdlLXVybC1zaWduaW5nLWtleV9jNTU1MzE4Ny1lNWQ2LTQyN2ItYjQzZi1kZjVlZWE4MzAwZGEiLCJhbGciOiJIUzI1NiJ9.eyJ1cmwiOiJudi8zZDhkMTk0Zi0wNTRlLTQ3ZWEtOGNkYS1lZmJmY2EwOTQ3OTYuanBlZyIsImlhdCI6MTc3NTk2NDkxMywiZXhwIjoxODA3NTAwOTEzfQ.ea79sRjmb_MslL4bRy2uAY07AFrRRjfm2VP4oUhXPuc"
                 alt="Zapatitos"
@@ -231,18 +239,18 @@ export default function App() {
 
           {/* Decorative Textures */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
-            <div className="absolute top-1/4 right-0 w-32 h-32 bg-brand-muted/20 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-1/4 left-0 w-40 h-40 bg-brand-soft/30 rounded-full blur-3xl"></div>
+            <div className="absolute top-1/4 right-0 w-32 h-32 bg-brand-muted/30 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-1/4 left-0 w-40 h-40 bg-brand-sky/30 rounded-full blur-3xl"></div>
           </div>
         </div>
       </section>
 
       {/* 4. Countdown Section */}
-      <section className="py-24 px-8 bg-brand-cream relative">
+      <section className="py-24 px-8 bg-brand-muted/20 relative">
         <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
           <svg width="100%" height="100%">
             <pattern id="dots-new" x="0" y="0" width="30" height="30" patternUnits="userSpaceOnUse">
-              <circle cx="2" cy="2" r="1" fill="#A85E82" />
+              <circle cx="2" cy="2" r="1" fill="#7856ff" />
             </pattern>
             <rect width="100%" height="100%" fill="url(#dots-new)" />
           </svg>
@@ -250,7 +258,7 @@ export default function App() {
         <FadeInUp className="relative z-10 text-center">
           <h3 className="text-[10px] uppercase tracking-[0.4em] text-brand-rose mb-12 font-black">Faltan solo</h3>
           <Countdown />
-          <p className="mt-12 text-brand-dark/40 text-[10px] uppercase tracking-widest">Para nuestro gran encuentro</p>
+          <p className="mt-12 text-brand-dark/50 text-[10px] uppercase tracking-widest">Para nuestro gran encuentro</p>
         </FadeInUp>
       </section>
 
@@ -259,19 +267,19 @@ export default function App() {
         {/* Date */}
         <FadeInUp className="text-center">
           <div className="mb-12 inline-block relative">
-            <div className="absolute inset-0 bg-brand-soft blur-3xl opacity-60 rounded-full scale-150"></div>
-            <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-inner border border-brand-soft">
-              <Calendar className="text-brand-rose" size={32} strokeWidth={1} />
+            <div className="absolute inset-0 bg-brand-sky blur-3xl opacity-40 rounded-full scale-150"></div>
+            <div className="relative w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-inner border border-brand-muted/40">
+              <Calendar className="text-brand-deep" size={32} strokeWidth={1} />
             </div>
           </div>
           <h3 className="font-serif-display text-4xl text-brand-dark mb-4">Sábado 13 de Junio</h3>
-          <p className="text-brand-rose tracking-[0.3em] font-bold text-sm mb-12">12:00 PM</p>
+          <p className="text-brand-coral tracking-[0.3em] font-bold text-sm mb-12">12:00 PM</p>
           <CalendarButton />
         </FadeInUp>
 
         {/* Location */}
         <FadeInUp className="relative px-2">
-          <div className="bg-white p-1.5 rounded-[3rem] shadow-2xl shadow-brand-deep/10 overflow-hidden border border-brand-soft">
+          <div className="bg-white p-1.5 rounded-[3rem] shadow-2xl shadow-brand-deep/15 overflow-hidden border border-brand-muted/50">
             <div className="aspect-[4/5] relative overflow-hidden rounded-[2.8rem]">
               <img 
                 src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800"
@@ -301,7 +309,7 @@ export default function App() {
               href="https://maps.app.goo.gl/mt4jkaaG7d6GVuQV8"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-4 bg-brand-dark text-brand-cream px-12 py-6 rounded-full shadow-2xl shadow-brand-dark/30 transition-all hover:translate-y-[-4px] active:scale-95"
+              className="flex items-center gap-4 bg-brand-deep text-brand-cream px-12 py-6 rounded-full shadow-2xl shadow-brand-deep/30 transition-all hover:translate-y-[-4px] active:scale-95"
             >
               <Map size={20} strokeWidth={1.5} />
               <span className="text-[10px] uppercase tracking-[0.3em] font-black">Ver cómo llegar</span>
@@ -311,8 +319,9 @@ export default function App() {
       </section>
 
       {/* 6. Itinerary */}
-      <section className="py-32 px-10 bg-brand-soft/10 relative">
-        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,_var(--color-brand-muted)_0%,_transparent_50%)] opacity-20"></div>
+      <section className="py-32 px-10 bg-brand-lilac/25 relative">
+        <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_0%_0%,_var(--color-brand-muted)_0%,_transparent_50%)] opacity-30"></div>
+        <div className="absolute bottom-8 right-0 w-44 h-44 bg-brand-mint/50 rounded-full blur-3xl"></div>
         <FadeInUp className="text-center mb-24 relative z-10">
           <div className="flex items-center justify-center gap-4 mb-6">
             <div className="w-12 h-px bg-gradient-to-r from-transparent to-brand-rose/50"></div>
@@ -320,19 +329,19 @@ export default function App() {
             <div className="w-12 h-px bg-gradient-to-l from-transparent to-brand-rose/50"></div>
           </div>
           <h3 className="font-serif-display text-4xl text-brand-dark">Nuestro Itinerario</h3>
-          <p className="text-[10px] uppercase tracking-[0.4em] text-brand-rose/60 mt-4 font-bold">Momentos mágicos</p>
+          <p className="text-[10px] uppercase tracking-[0.4em] text-brand-deep/60 mt-4 font-bold">Momentos mágicos</p>
         </FadeInUp>
         
         <div className="space-y-20 relative z-10">
           <div className="absolute left-[23px] top-4 bottom-4 w-px bg-gradient-to-b from-brand-muted via-brand-rose to-brand-muted opacity-30"></div>
           {[
-            { time: '12:00 PM', title: 'Recepción', icon: <GlassWater size={18} /> },
-            { time: '01:00 PM', title: 'Almuerzo', icon: <Utensils size={18} /> },
-            { time: '02:30 PM', title: 'Juegos y Risas', icon: <PartyPopper size={18} /> },
-            { time: '04:00 PM', title: 'Pastel y Fotos', icon: <Camera size={18} /> },
+            { time: '12:00 PM', title: 'Recepción', icon: <GlassWater size={18} />, tone: 'bg-brand-sky/35 text-brand-deep border-brand-sky' },
+            { time: '01:00 PM', title: 'Almuerzo', icon: <Utensils size={18} />, tone: 'bg-brand-muted/35 text-brand-dark border-brand-muted' },
+            { time: '02:30 PM', title: 'Juegos y Risas', icon: <PartyPopper size={18} />, tone: 'bg-brand-coral/25 text-brand-rose border-brand-coral' },
+            { time: '04:00 PM', title: 'Pastel y Fotos', icon: <Camera size={18} />, tone: 'bg-brand-mint/45 text-brand-deep border-brand-mint' },
           ].map((item, i) => (
             <FadeInUp key={i} delay={i * 0.1} className="relative flex items-start gap-10">
-              <div className="w-12 h-12 rounded-full bg-white border-2 border-brand-soft flex items-center justify-center text-brand-rose shrink-0 z-10 shadow-lg group-hover:scale-110 transition-transform">
+              <div className={`w-12 h-12 rounded-full border-2 flex items-center justify-center shrink-0 z-10 shadow-lg group-hover:scale-110 transition-transform ${item.tone}`}>
                 {item.icon}
               </div>
               <div className="pt-1.5">
@@ -346,20 +355,22 @@ export default function App() {
 
       {/* 7. RSVP */}
       <section className="py-48 px-10 text-center relative overflow-hidden bg-brand-cream">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-soft)_0%,_transparent_80%)] opacity-40"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--color-brand-soft)_0%,_transparent_80%)] opacity-55"></div>
+        <div className="absolute top-20 left-4 w-24 h-24 bg-brand-sky/40 rounded-full blur-2xl"></div>
+        <div className="absolute bottom-24 right-2 w-28 h-28 bg-brand-muted/40 rounded-full blur-2xl"></div>
         
         <FadeInUp className="relative z-10 space-y-12">
           <div className="space-y-6">
             <h3 className="font-serif-display text-5xl text-brand-dark leading-tight">¿Nos acompañas?</h3>
             <p className="text-brand-dark/60 font-light leading-relaxed max-w-xs mx-auto text-lg italic">
-              "Tu presencia es el mejor regalo para nuestra pequeña Madisson."
+              "Tu presencia es el mejor regalo para nuestra pequeña Madison."
             </p>
             <p className="text-[10px] uppercase tracking-[0.3em] text-brand-rose font-bold">Confirma antes del 1 de Junio</p>
           </div>
           
           <div className="flex flex-col items-center gap-6">
             <a 
-              href="https://wa.me/50671757171?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Madisson%20%F0%9F%92%96%0Ami%20nombre%20es%3A%0AAsistiremos%3A%0AMensaje%20adicional%3A"
+              href="https://wa.me/50671757171?text=Hola%2C%20confirmo%20mi%20asistencia%20al%20Baby%20Shower%20de%20Madison%20%F0%9F%92%96%0Ami%20nombre%20es%3A%0AAsistiremos%3A%0AMensaje%20adicional%3A"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-5 bg-brand-rose text-white px-14 py-7 rounded-full shadow-2xl shadow-brand-rose/40 font-black text-[10px] uppercase tracking-[0.4em] transition-all hover:scale-105 active:scale-95 group"
@@ -376,9 +387,9 @@ export default function App() {
 
       {/* 8. Footer */}
       <footer className="py-32 px-12 text-center relative bg-brand-bg">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-brand-muted/30"></div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-px bg-brand-muted/50"></div>
         <FadeInUp className="space-y-10">
-          <div className="font-script text-7xl sm:text-8xl text-brand-rose/80">Madisson</div>
+          <div className="font-script text-7xl sm:text-8xl text-brand-rose/80">Madison</div>
           <div className="space-y-2">
             <p className="text-[10px] uppercase tracking-[0.6em] text-brand-dark/40 font-bold">Con amor, te esperamos</p>
             <p className="text-[9px] uppercase tracking-[0.3em] text-brand-rose/30">2026 • Baby Shower</p>
